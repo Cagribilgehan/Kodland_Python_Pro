@@ -25,7 +25,7 @@ Projeyi yerel olarak kurmak için aşağıdaki adımları izleyin:
 - Gunicorn (dağıtım için)
 
   ## Ekran Görüntüleri
-- ![Giris Arayüzü](screenshots/Etrance.png)
+- ![Giris Arayüzü](screenshots/Entrance.png)
 - ![Quiz Arayüzü](screenshots/Quiz.png)
 - ![Sonuç Sayfası](screenshots/Results.png)
   
