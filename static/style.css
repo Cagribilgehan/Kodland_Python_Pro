@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Modern bir yazı tipi */
+    background: #ffffff; /* Ekran alıntısındaki beyaz arka plan */
+    color: #333; /* Daha koyu bir metin rengi */
+    line-height: 1.6;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* İçeriği dikey olarak hizala */
+    justify-content: space-between; /* Üst ve alt arasında boşluk bırak */
+}
+
+.container {
+    width: 65%;
+    max-width: 850px;
+    margin: 20px auto;
+    background: #FAFAFA; /* Ara plan, daha açık bir ton */
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out; /* Giriş animasyonu */
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: #333; /* Daha koyu bir başlık rengi */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+p {
+    font-size: 1.3rem;
+    color: #666;
+    margin: 15px 0;
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+    font-size: 1rem;
+    color: #999;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: auto; /* Footer’ı sayfanın altına itmek için */
+}
+
+/* Footer için özel stil */
+footer .developer-info {
+    display: block;
+    margin-bottom: 5px;
+    color: #666; /* Gri ton (ekran alıntısındaki gibi) */
+    font-weight: bold;
+}
+
+footer .github-link {
+    display: block;
+    margin-bottom: 5px;
+    color: #0066cc; /* Ekran alıntısındaki mavi bağlantı rengi */
+    text-decoration: underline;
+}
+
+/* En yüksek puan bölümü */
+.high-score {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #d32f2f; /* Ekran alıntısındaki kırmızı */
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.high-score:hover {
+    transform: scale(1.05); /* Üzerine gelince büyüme efekti */
+}
+
+/* Butonlar */
+button {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    background: #d32f2f; /* Kırmızı buton */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+}
+
+button:hover {
+    background: #b71c1c; /* Daha koyu kırmızı */
+    transform: translateY(-3px); /* Yukarı hareket efekti */
+}
+
+.reset-button {
+    background: #666; /* Gri ton */
+}
+
+.reset-button:hover {
+    background: #555;
+}
+
+/* İsim input alanı */
+.name-input {
+    margin-top: 10px;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid #d32f2f; /* Kırmızı çerçeve */
+    background: #fff;
+    color: #333;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.input-container label {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.input-container input {
+    width: 100%;
+    max-width: 420px;
+    padding: 14px;
+    font-size: 1.2rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.input-container input:focus {
+    border-color: #d32f2f; /* Kırmızı çerçeve */
+    outline: none;
+    box-shadow: 0 0 10px rgba(211, 47, 47, 0.3);
+}
+
+/* Sorular */
+.question {
+    background: #F5F5F5; /* SuperGrok’taki kart arka planına benzer renk */
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    animation: slideUp 0.5s ease-out; /* Yukarı kayma animasyonu */
+}
+
+.question label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Radio Butonlarını Özelleştir */
+input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #666; /* Gri çerçeve */
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 12px;
+    background: #fff;
+}
+
+input[type="radio"]:checked {
+    background: #d32f2f; /* Seçildiğinde kırmızı */
+    border-color: #d32f2f;
+}
+
+input[type="radio"]::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+input[type="radio"]:checked::before {
+    opacity: 1;
+}
+
+/* Gönder butonu */
+input[type="submit"] {
+    width: 100%;
+    max-width: 320px;
+    background: #d32f2f; /* Kırmızı */
+    border: none;
+    color: white;
+    padding: 15px 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+}
+
+input[type="submit"]:hover {
+    background: #b71c1c; /* Daha koyu kırmızı */
+    transform: translateY(-3px);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    button, input[type="submit"] {
+        max-width: 100%;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

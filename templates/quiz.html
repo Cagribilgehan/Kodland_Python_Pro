@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Merhaba, {{ user_name }}!</h2>
+<hr>
+<h1>Python Sınavı Başlıyor!</h1>
+<hr>
+<p>Kişisel En Yüksek Skorunuz: {{ (user_high_score / 10) * 100 }}%</p>
+<hr>
+<p>Genel En Yüksek Skor: {{ (global_high_score / 10) * 100 }}%</p>
+<hr style="margin-bottom: 20px;">
+
+<form action="/submit" method="POST">
+    {% for question in questions %}
+    <div class="question">
+        <label>{{ question.id }}. {{ question.text }}</label><br>
+        <input type="radio" name="q{{ question.id }}" value="A" required> {{ question.option_a }}<br>
+        <input type="radio" name="q{{ question.id }}" value="B" required> {{ question.option_b }}<br>
+        <input type="radio" name="q{{ question.id }}" value="C" required> {{ question.option_c }}<br>
+        <input type="radio" name="q{{ question.id }}" value="D" required> {{ question.option_d }}<br>
+    </div>
+    {% endfor %}
+    <button type="submit">Gönder</button>
+</form>
+{% endblock %}

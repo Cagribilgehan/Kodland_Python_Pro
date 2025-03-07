@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Tebrikler, {{ user_name }}! Sınavı Tamamladın</h1>
+<hr>
+<p>Skorunuz: {{ ((score / total_questions) * 100) | int }}%</p>  <!-- Yüzdeyi tam sayı olarak göster -->
+<hr>
+<p>Kişisel En Yüksek Skorunuz: {{ ((user_high_score / total_questions) * 100) | int }}%</p>
+<hr>
+<p>Genel En Yüksek Skor: {{ ((global_high_score / total_questions) * 100) | int }}%</p>
+<hr>
+
+<form action="/quiz" method="GET">
+    <button type="submit">Yeniden Dene</button>
+</form>
+
+<form action="/reset" method="post">
+    <button class="reset-button" type="submit">En Yüksek Puanları Sıfırla</button>
+</form>
+{% endblock %}
